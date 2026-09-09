@@ -1,5 +1,5 @@
 // Single place to update contact details before launch.
-const SALES_EMAIL = "sales@tafsell.com";
+const SALES_EMAIL = "info@newmux.com";
 
 document.getElementById("sales-email").textContent = SALES_EMAIL;
 

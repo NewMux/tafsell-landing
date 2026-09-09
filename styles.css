@@ -10,7 +10,7 @@
   --orange-deep: #c73f13;
   --line: rgba(20, 18, 13, 0.14);
   --line-on-black: rgba(243, 237, 224, 0.16);
-  --line-on-orange: rgba(12, 12, 11, 0.22);
+  --line-on-orange: rgba(12, 12, 11, 0.4);
   --shadow: 0 1px 2px rgba(12, 12, 11, 0.08), 0 8px 24px rgba(12, 12, 11, 0.06);
 }
 
@@ -506,22 +506,19 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   margin-top: 44px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-top: 1px solid var(--line-on-orange);
+  column-gap: 2px;
+  background: var(--line-on-orange);
+  border-top: 2px solid var(--line-on-orange);
+  border-bottom: 2px solid var(--line-on-orange);
 }
 
 @media (max-width: 720px) {
-  .steps { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; column-gap: 0; row-gap: 2px; }
 }
 
 .step {
-  padding: 26px 24px 26px 0;
-  border-bottom: 1px solid var(--line-on-orange);
-}
-
-@media (min-width: 721px) {
-  .step { border-inline-end: 1px solid var(--line-on-orange); padding-inline: 0 24px; }
-  .step:last-child { border-inline-end: none; }
+  background: var(--orange);
+  padding: 26px 24px;
 }
 
 .step-number {

@@ -2,7 +2,6 @@
 const SALES_EMAIL = "sales@tafsell.com";
 
 document.getElementById("sales-email").textContent = SALES_EMAIL;
-document.getElementById("year").textContent = String(new Date().getFullYear());
 
 document.getElementById("demo-form").addEventListener("submit", event => {
   event.preventDefault();

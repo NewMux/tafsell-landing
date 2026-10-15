@@ -97,6 +97,32 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   letter-spacing: -0.01em;
 }
 
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand-by {
+  white-space: nowrap;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.header-signin {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header-signin:hover { color: var(--orange-deep); }
+
 .main-nav {
   display: flex;
   gap: 24px;
@@ -116,6 +142,26 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 @media (max-width: 720px) {
   .main-nav { display: none; }
+  /* With the nav hidden, push sign-in and the CTA to the right edge. */
+  .header-signin { margin-inline-start: auto; }
+  .header-inner { gap: 16px; }
+}
+
+@media (max-width: 420px) {
+  .header-inner { gap: 12px; }
+  .brand { gap: 8px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .brand-word { font-size: 17px; }
+  .brand-by { font-size: 8.5px; letter-spacing: 0.04em; }
+  .header-signin { font-size: 13px; }
+  .site-header .btn-sm { padding: 8px 12px; }
+  .site-header .btn-sm svg { display: none; }
+}
+
+@media (max-width: 360px) {
+  .site-header .wrap { padding: 0 16px; }
+  .header-inner { gap: 10px; }
+  .site-header .btn-sm { padding: 8px 9px; font-size: 12.5px; }
 }
 
 /* ---------- buttons ---------- */
@@ -144,7 +190,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .btn-cream { background: var(--cream); color: var(--black); }
 .btn-cream:hover { background: #fff; }
 
-.btn-sm { padding: 9px 16px; font-size: 13px; }
+.btn-sm { padding: 9px 16px; font-size: 13px; white-space: nowrap; }
 .btn-lg { padding: 15px 26px; font-size: 15px; }
 .btn-block { width: 100%; justify-content: center; padding: 14px 20px; font-size: 15px; border: none; }
 
@@ -704,6 +750,10 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 }
 
 .footer-link:hover { color: var(--orange-deep); }
+
+.footer-tagline a { color: inherit; font-weight: 600; }
+
+.footer-links { display: flex; gap: 20px; }
 
 @media (max-width: 560px) {
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }

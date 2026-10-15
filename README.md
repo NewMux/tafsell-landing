@@ -1,8 +1,10 @@
 # Tafsell landing page
 
-Standalone marketing site for Tafsell. Plain HTML/CSS/JS, no build step, no
-dependency on the ERP codebase — visitors can only book a demo here, they
-never reach any ERP login.
+Standalone marketing site for Tafsell, powered by NewMux. Plain HTML/CSS/JS,
+no build step, no dependency on the ERP codebase. Tafsell is invite-only:
+prospects book a demo here (there is no sign-up), and existing customers
+use the "Sign in" link, which points at the app (`https://tafsell.vercel.app/`;
+update the two links in `index.html` if the app moves to its own domain).
 
 ## Editing
 

@@ -2,6 +2,7 @@
 const SALES_EMAIL = "info@newmux.com";
 
 document.getElementById("sales-email").textContent = SALES_EMAIL;
+document.getElementById("year").textContent = String(new Date().getFullYear());
 
 document.getElementById("demo-form").addEventListener("submit", event => {
   event.preventDefault();

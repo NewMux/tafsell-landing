@@ -3,13 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tafsell — Run the Counter, See the Whole Workroom | Powered by NewMux</title>
-  <meta name="description" content="Tafsell brings sales, stock, customers, tailoring orders, and payroll into one clear workspace for shops that make things to measure. Book a demo." />
+  <title>Tafsell — Tailoring Shop Software &amp; POS for the Gulf</title>
+  <meta name="description" content="Tafsell is the all-in-one system for tailoring shops in the Gulf: point of sale, tailoring orders and measurements, fabric stock, VAT invoices and payroll, in Arabic and English. Book a demo." />
+  <link rel="canonical" href="https://tafsell.com/" />
+  <link rel="alternate" hreflang="en" href="https://tafsell.com/" />
+  <link rel="alternate" hreflang="ar" href="https://tafsell.com/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://tafsell.com/" />
+  <meta name="theme-color" content="#0c0c0b" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tafsell" />
+  <meta property="og:url" content="https://tafsell.com/" />
+  <meta property="og:title" content="Tafsell — Tailoring Shop Software &amp; POS for the Gulf" />
+  <meta property="og:description" content="Sales, tailoring orders, measurements, fabric stock, VAT invoices and payroll in one workspace, in Arabic and English." />
+  <meta property="og:image" content="https://tafsell.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tafsell — tailoring shop software, powered by NewMux" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" type="image/jpeg" href="/assets/tafsell-logo-192.jpg" />
+  <link rel="apple-touch-icon" href="/assets/tafsell-logo-192.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tafsell.com/#organization",
+        "name": "Tafsell",
+        "url": "https://tafsell.com/",
+        "logo": "https://tafsell.com/assets/tafsell-logo-512.jpg",
+        "email": "info@newmux.com",
+        "parentOrganization": { "@type": "Organization", "name": "NewMux", "url": "https://www.newmux.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Tafsell",
+        "url": "https://tafsell.com/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "inLanguage": ["en", "ar"],
+        "description": "Business software for tailoring shops: point of sale, tailoring orders and measurements, fabric and stock, VAT invoices, staff and payroll.",
+        "publisher": { "@id": "https://tafsell.com/#organization" }
+      }
+    ]
+  }
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -27,6 +74,7 @@
         <a href="#workspace">Product</a>
         <a href="#getting-started">How it works</a>
       </nav>
+      <a href="/ar/" class="header-lang" lang="ar" hreflang="ar">عربي</a>
       <a href="https://app.tafsell.com/" class="header-signin">Sign in</a>
       <a href="#book-a-demo" class="btn btn-primary btn-sm">Book a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </div>
@@ -231,27 +279,36 @@
         <form class="demo-form" id="demo-form">
           <div class="field">
             <label for="demo-name">Your name</label>
-            <input id="demo-name" name="name" type="text" required maxlength="160" />
+            <input id="demo-name" name="name" type="text" required maxlength="160" autocomplete="name" />
           </div>
           <div class="field">
             <label for="demo-shop">Shop or business name</label>
-            <input id="demo-shop" name="shopName" type="text" required maxlength="160" />
+            <input id="demo-shop" name="shopName" type="text" required maxlength="160" autocomplete="organization" />
           </div>
           <div class="field">
             <label for="demo-email">Email</label>
-            <input id="demo-email" name="email" type="email" required maxlength="320" />
+            <input id="demo-email" name="email" type="email" required maxlength="320" autocomplete="email" />
           </div>
           <div class="field">
-            <label for="demo-phone">Phone (optional)</label>
-            <input id="demo-phone" name="phone" type="tel" maxlength="40" />
+            <label for="demo-phone">Phone or WhatsApp (optional)</label>
+            <input id="demo-phone" name="phone" type="tel" maxlength="40" autocomplete="tel" />
           </div>
           <div class="field">
             <label for="demo-message">What would you like to see? (optional)</label>
             <textarea id="demo-message" name="message" rows="3" maxlength="2000"></textarea>
           </div>
+          <div class="hp" aria-hidden="true">
+            <label for="demo-website">Leave this empty</label>
+            <input id="demo-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <button type="submit" class="btn btn-primary btn-block">Request a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></button>
-          <p class="form-note">This opens an email to <span id="sales-email">info@newmux.com</span>. We'll get back to you to schedule a time.</p>
+          <p class="form-status" id="demo-status" role="alert" hidden></p>
+          <p class="form-note">We'll get back to you to schedule a time. See our <a href="https://app.tafsell.com/privacy">privacy policy</a>.</p>
         </form>
+        <div class="form-success" id="demo-success" tabindex="-1" hidden>
+          <h3>Thank you — we've got it.</h3>
+          <p>We'll be in touch soon to schedule your demo. Questions in the meantime: <span data-sales-email>info@newmux.com</span>.</p>
+        </div>
       </div>
     </section>
 
@@ -293,6 +350,9 @@
       <nav class="footer-links" aria-label="Footer">
         <a href="https://app.tafsell.com/" class="footer-link">Customer sign in</a>
         <a href="#book-a-demo" class="footer-link">Book a demo</a>
+        <a href="https://app.tafsell.com/terms" class="footer-link">Terms</a>
+        <a href="https://app.tafsell.com/privacy" class="footer-link">Privacy</a>
+        <a href="/ar/" class="footer-link" lang="ar" hreflang="ar">العربية</a>
       </nav>
     </div>
   </footer>

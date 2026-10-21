@@ -142,7 +142,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 @media (max-width: 720px) {
   .main-nav { display: none; }
-  /* With the nav hidden, push sign-in and the CTA to the right edge. */
+  /* With the nav hidden, push sign-in and the CTA to the far edge. */
   .header-signin { margin-inline-start: auto; }
   .header-inner { gap: 16px; }
 }
@@ -153,7 +153,9 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   .brand-mark { width: 30px; height: 30px; }
   .brand-word { font-size: 17px; }
   .brand-by { font-size: 8.5px; letter-spacing: 0.04em; }
-  .header-signin { font-size: 13px; }
+  /* No room for both: customers still have "Customer sign in" in the footer. */
+  .header-signin { display: none; }
+  .header-lang { margin-inline-start: auto; font-size: 13px; }
   .site-header .btn-sm { padding: 8px 12px; }
   .site-header .btn-sm svg { display: none; }
 }
@@ -215,14 +217,14 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--orange-deep);
-  padding-left: 16px;
+  padding-inline-start: 16px;
   position: relative;
 }
 
 .eyebrow::before {
   content: "";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 10px;
@@ -330,7 +332,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 .mock-sidebar {
   background: #fafaf7;
-  border-right: 1px solid var(--line);
+  border-inline-end: 1px solid var(--line);
   padding: 14px 12px;
 }
 
@@ -753,9 +755,107 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 
 .footer-tagline a { color: inherit; font-weight: 600; }
 
-.footer-links { display: flex; gap: 20px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 
 @media (max-width: 560px) {
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer-tagline { margin-inline-end: 0; }
 }
+
+/* ---------- language switch ---------- */
+
+.header-lang {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.75;
+}
+
+.header-lang:hover { opacity: 1; color: var(--orange-deep); }
+
+/* The English page loads no Arabic web font; use the system's for "عربي". */
+.header-lang:lang(ar),
+.footer-link:lang(ar) { font-family: system-ui, "Segoe UI", Tahoma, sans-serif; }
+
+/* ---------- demo form states ---------- */
+
+/* Honeypot: off-screen for people, still in the DOM for naive bots. */
+.hp {
+  position: absolute;
+  inset-inline-start: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.demo-form button[disabled] { opacity: 0.6; cursor: progress; }
+
+.form-status {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  background: rgba(199, 63, 19, 0.08);
+  color: var(--orange-deep);
+}
+
+.form-status a { color: inherit; font-weight: 600; }
+
+.form-note a { color: inherit; }
+
+.form-success {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 36px 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.form-success h3 { font-family: "Fraunces", Georgia, serif; font-size: 26px; font-weight: 600; }
+
+.form-success p { margin: 12px 0 0; color: var(--muted); }
+
+/* ---------- Arabic (right-to-left) ---------- */
+
+/* Fraunces and Inter have no Arabic glyphs: Arabic text uses IBM Plex Sans
+   Arabic, and Latin words in the Arabic page (Tafsell, NewMux) keep Inter. */
+:lang(ar) body,
+:lang(ar) .field input,
+:lang(ar) .field textarea,
+:lang(ar) .btn {
+  font-family: "IBM Plex Sans Arabic", "Inter", -apple-system, "Segoe UI", Tahoma, sans-serif;
+}
+
+:lang(ar) .display,
+:lang(ar) .form-success h3 {
+  font-family: "IBM Plex Sans Arabic", "Fraunces", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+/* Arabic has no italics; the accent line keeps its colour and weight instead. */
+:lang(ar) .display em { font-style: normal; font-weight: 600; }
+
+/* Letter-spacing breaks the joins between Arabic letters. */
+:lang(ar) .eyebrow,
+:lang(ar) .brand-by,
+:lang(ar) .newmux-tagline,
+:lang(ar) .mock-eyebrow,
+:lang(ar) .mock-metric-label { letter-spacing: 0; }
+
+/* Arrows point the way the text reads. */
+[dir="rtl"] .btn svg,
+[dir="rtl"] .btn-link svg,
+[dir="rtl"] .feature-arrow { transform: scaleX(-1); }
+
+/* Latin-only pieces stay left-to-right inside the Arabic page. */
+[dir="rtl"] .brand-text,
+[dir="rtl"] .newmux-lockup,
+[dir="rtl"] .browser-url { direction: ltr; }
+
+[dir="rtl"] .field input[type="email"],
+[dir="rtl"] .field input[type="tel"] { direction: ltr; text-align: right; }

@@ -1,31 +1,50 @@
 # Tafsell landing page
 
-Standalone marketing site for Tafsell, powered by NewMux. Plain HTML/CSS/JS,
-no build step, no dependency on the ERP codebase. Tafsell is invite-only:
-prospects book a demo here (there is no sign-up), and existing customers
-use the "Sign in" link, which points at the app (`https://app.tafsell.com/`;
-update the two links in `index.html` if the app moves to its own domain).
+Standalone marketing site for Tafsell, powered by NewMux, in English (`/`)
+and Arabic (`/ar/`, right-to-left). Plain HTML/CSS/JS, no build step.
+Tafsell is sold through demos and service agreements: prospects book a demo
+here (there is no sign-up), and existing customers use the "Sign in" link to
+the app at `https://app.tafsell.com/`.
 
 ## Editing
 
-- `index.html` — page content and structure.
-- `styles.css` — all styling (light/dark aware).
+- `index.html` — English page content and structure.
+- `ar/index.html` — **generated**; don't edit it by hand. After any change to
+  `index.html`, run `python3 tools/make-ar.py`. Arabic copy lives in that
+  script as English → Arabic pairs; it stops with an error if an English
+  string it expects has changed, so the two pages can't drift apart.
+- `styles.css` — all styling. Uses logical properties (`padding-inline-start`,
+  not `padding-left`) so the same rules work right-to-left; RTL-only tweaks
+  are at the end.
 - `script.js` — the "Book a demo" form and the sales contact email
-  (`SALES_EMAIL` — update this before launch).
-- `assets/` — logo files. Replace `tafsell-logo-192.jpg` /
-  `tafsell-logo-512.jpg` with a real logo when you have one.
+  (`SALES_EMAIL`).
+- `assets/` — logo files and `og-image.png` (1200×630, the preview card
+  shown when the site is shared on WhatsApp, LinkedIn, X, etc.).
+- `robots.txt`, `sitemap.xml` — for search engines; list both languages.
+
+## "Book a demo" form
+
+The form posts JSON to `https://app.tafsell.com/api/public/demo-request`
+(Tailor-saas, `server/_core/demoRequests.ts`), which stores the request and
+emails it to the sales inbox with Reply-To set to the prospect. Only
+`tafsell.com` and `www.tafsell.com` are allowed to call it, so the form fails
+on Vercel preview URLs (it then shows the sales email instead). On a local
+preview it calls `http://localhost:3000`, i.e. a local copy of the app.
+
+## Analytics
+
+`/_vercel/insights/script.js` is Vercel Web Analytics (no cookies). Turn it
+on under the Vercel project → **Analytics**. Each successful form submission
+is recorded as a "Demo request" custom event, split by page language.
 
 ## Local preview
 
-Any static file server works, e.g.:
-
 ```bash
-npx serve .
+python3 -m http.server 5000   # or: npx serve .
 ```
 
 ## Deploy
 
-This is a static site — connect the repo to Vercel, Netlify, GitHub Pages,
-or any static host, point your domain at it, and it just works. No build
-command or output directory needed (or set them to a no-op / this
-directory, depending on the host).
+Vercel project `tafsell-landing`; pushing to `main` deploys `tafsell.com`.
+`vercel.json` sets the security headers and Content-Security-Policy;
+`.vercelignore` keeps `tools/` and this README off the site.

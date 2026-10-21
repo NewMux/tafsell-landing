@@ -126,12 +126,12 @@ PAIRS = [
      '<h2 class="display block-heading">من مكالمة<br /><em>إلى كاونتر يعمل.</em></h2>'),
     ("<h3>Book a demo</h3>\n            <p>Tell us about your shop and we'll walk you through the real workspace, live, on a call.</p>",
      '<h3>احجز عرضًا توضيحيًا</h3>\n            <p>أخبرنا عن محلك، وسنعرض لك مساحة العمل الحقيقية مباشرةً في مكالمة.</p>'),
-    ('<h3>Sign &amp; set up</h3>\n            <p>A one-time setup fee and a simple contract get your shop fully configured on its own domain.</p>',
-     '<h3>التعاقد والإعداد</h3>\n            <p>رسوم إعداد لمرة واحدة وعقد بسيط، ونجهّز محلك بالكامل على نطاقه الخاص.</p>'),
+    ('<h3>Sign &amp; set up</h3>\n            <p>A one-time setup fee and a simple contract get your shop fully configured, with its own private workspace on app.tafsell.com.</p>',
+     '<h3>التعاقد والإعداد</h3>\n            <p>رسوم إعداد لمرة واحدة وعقد بسيط، ونجهّز محلك بالكامل بمساحة عمل خاصة به على <bdi>app.tafsell.com</bdi>.</p>'),
     ('<h3>Go live</h3>\n            <p>Your team starts using it day to day, backed by a straightforward monthly subscription.</p>',
      '<h3>ابدأ العمل</h3>\n            <p>يبدأ فريقك باستخدامه يوميًا، باشتراك شهري واضح.</p>'),
-    ('<p class="steps-note">No hidden costs. No shared accounts. Your workspace, your domain.</p>',
-     '<p class="steps-note">لا تكاليف خفية. لا حسابات مشتركة. مساحة عملك، ونطاقك.</p>'),
+    ('<p class="steps-note">No hidden costs. No shared accounts. Your shop\'s own private workspace on app.tafsell.com.</p>',
+     '<p class="steps-note">لا تكاليف خفية. لا حسابات مشتركة. مساحة عمل خاصة بمحلك على <bdi>app.tafsell.com</bdi>.</p>'),
 
     # --- CTA ---
     ('<span class="eyebrow eyebrow-on-black">A clearer way to run the shop</span>', '<span class="eyebrow eyebrow-on-black">طريقة أوضح لإدارة المحل</span>'),

@@ -31,8 +31,8 @@ PAIRS = [
      '<meta property="og:image:alt" content="تفصيل — برنامج محلات الخياطة، بدعم من NewMux" />'),
     ('<meta property="og:locale" content="en_US" />\n  <meta property="og:locale:alternate" content="ar_AR" />',
      '<meta property="og:locale" content="ar_AR" />\n  <meta property="og:locale:alternate" content="en_US" />'),
-    ("family=Inter:wght@400;500;600;700&display=swap",
-     "family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"),
+    ("family=Sora:wght@400;500;600;700&display=swap",
+     "family=Sora:wght@400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap"),
     ('"description": "Business software for tailoring shops: point of sale, tailoring orders and measurements, fabric and stock, VAT invoices, staff and payroll.",',
      '"description": "برنامج أعمال لمحلات الخياطة: نقطة بيع، وطلبات التفصيل والمقاسات، والأقمشة والمخزون، وفواتير ضريبة القيمة المضافة، والموظفون والرواتب.",'),
     ('"url": "https://tafsell.com/",\n        "applicationCategory"', '"url": "https://tafsell.com/ar/",\n        "applicationCategory"'),
@@ -88,14 +88,14 @@ PAIRS = [
     ('<span>Fatima Yusuf</span><span>BHD 95.000</span>', '<span>فاطمة يوسف</span><span>95.000 د.ب</span>'),
 
     # --- 01 promise ---
-    ('<span class="eyebrow eyebrow-on-orange">01 — The promise</span>', '<span class="eyebrow eyebrow-on-orange">01 — وعدنا</span>'),
+    ('<span class="eyebrow eyebrow-on-indigo">01 — The promise</span>', '<span class="eyebrow eyebrow-on-indigo">01 — وعدنا</span>'),
     ('<h2 class="display block-heading">Not another tool.<br /><em>The place the shop runs.</em></h2>',
      '<h2 class="display block-heading">ليس مجرد أداة أخرى.<br /><em>بل المكان الذي يُدار منه المحل.</em></h2>'),
     ('<p class="block-lead">Tafsell keeps the day connected — from the first customer conversation to the final fitting and invoice.</p>',
      '<p class="block-lead">يبقي «تفصيل» يوم العمل مترابطًا — من أول حديث مع العميل حتى البروفة الأخيرة والفاتورة.</p>'),
 
     # --- 02 workspace ---
-    ('<span class="eyebrow eyebrow-on-black">02 — The workspace</span>', '<span class="eyebrow eyebrow-on-black">02 — مساحة العمل</span>'),
+    ('<span class="eyebrow eyebrow-on-night">02 — The workspace</span>', '<span class="eyebrow eyebrow-on-night">02 — مساحة العمل</span>'),
     ('<h2 class="display block-heading light"><em>Everything you need.</em><br />Nothing to hunt for.</h2>',
      '<h2 class="display block-heading light"><em>كل ما تحتاجه.</em><br />دون عناء البحث.</h2>'),
     ("<p class=\"block-lead light\">The same ERP your team uses every day — set up as your shop's own dedicated workspace, not a shared account.</p>",
@@ -121,7 +121,7 @@ PAIRS = [
      '<h3>لا تفوّت أي بروفة</h3><p>الفواتير والتسليمات والأرصدة متابَعة من عرض السعر حتى التسليم.</p>'),
 
     # --- 04 getting started ---
-    ('<span class="eyebrow eyebrow-on-orange">04 — Getting started</span>', '<span class="eyebrow eyebrow-on-orange">04 — كيف نبدأ</span>'),
+    ('<span class="eyebrow eyebrow-on-indigo">04 — Getting started</span>', '<span class="eyebrow eyebrow-on-indigo">04 — كيف نبدأ</span>'),
     ('<h2 class="display block-heading">From a call<br /><em>to a live counter.</em></h2>',
      '<h2 class="display block-heading">من مكالمة<br /><em>إلى كاونتر يعمل.</em></h2>'),
     ("<h3>Book a demo</h3>\n            <p>Tell us about your shop and we'll walk you through the real workspace, live, on a call.</p>",
@@ -134,7 +134,7 @@ PAIRS = [
      '<p class="steps-note">لا تكاليف خفية. لا حسابات مشتركة. مساحة عمل خاصة بمحلك على <bdi>app.tafsell.com</bdi>.</p>'),
 
     # --- CTA ---
-    ('<span class="eyebrow eyebrow-on-black">A clearer way to run the shop</span>', '<span class="eyebrow eyebrow-on-black">طريقة أوضح لإدارة المحل</span>'),
+    ('<span class="eyebrow eyebrow-on-night">A clearer way to run the shop</span>', '<span class="eyebrow eyebrow-on-night">طريقة أوضح لإدارة المحل</span>'),
     ('<h2 class="display block-heading light">Make the work<br /><em>easier to see.</em></h2>',
      '<h2 class="display block-heading light">اجعل العمل<br /><em>أوضح أمامك.</em></h2>'),
     ("<p class=\"block-lead light\">Book a demo and we'll show you the exact workspace your shop would run.</p>",
